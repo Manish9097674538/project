@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System - Reports</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Student Management</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="students.html">Students</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="attendance.html">Attendance</a></li>
+                    <li><a href="grades.html">Grades</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <h1>Reports</h1>
+            
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Student Report</h3>
+                    <p>Generate student details</p>
+                    <a href="#" class="btn">Generate</a>
+                </div>
+                <div class="card">
+                    <h3>Attendance Report</h3>
+                    <p>View attendance statistics</p>
+                    <a href="#" class="btn">Generate</a>
+                </div>
+                <div class="card">
+                    <h3>Grade Report</h3>
+                    <p>View grade statistics</p>
+                    <a href="#" class="btn">Generate</a>
+                </div>
+                <div class="card">
+                    <h3>Course Report</h3>
+                    <p>View course enrollment</p>
+                    <a href="#" class="btn">Generate</a>
+                </div>
+            </div>
+            
+            <h2>Student Performance Report</h2>
+            <div class="form-group">
+                <label for="reportStudent">Select Student</label>
+                <select id="reportStudent">
+                    <option value="">-- Select Student --</option>
+                    <option value="1001">Manish kumar (1001)</option>
+                    <option value="1002">Rahul kumar (1002)</option>
+                    <option value="1003">Rohan (1003)</option>
+                </select>
+            </div>
+            
+            <button class="btn btn-success">Generate Report</button>
+            
+            <div style="margin-top: 30px; background-color: #f9f9f9; padding: 20px; border-radius: 5px;">
+                <h3>John Doe - Student Report</h3>
+                <p><strong>Student ID:</strong> 1001</p>
+                <p><strong>Program:</strong> Computer Science</p>
+                <p><strong>Enrollment Date:</strong> 2022-09-01</p>
+                
+                <h4 style="margin-top: 20px;">Courses and Grades</h4>
+                <table>
+                    <tr>
+                        <th>Course</th>
+                        <th>Midterm</th>
+                        <th>Final</th>
+                        <th>Average</th>
+                    </tr>
+                    <tr>
+                        <td>CS101 - Introduction to Programming</td>
+                        <td>A</td>
+                        <td>A-</td>
+                        <td>A-</td>
+                    </tr>
+                    <tr>
+                        <td>MATH101 - Calculus I</td>
+                        <td>B+</td>
+                        <td>B</td>
+                        <td>B</td>
+                    </tr>
+                </table>
+                
+                <h4 style="margin-top: 20px;">Attendance Summary</h4>
+                <p><strong>Overall Attendance Rate:</strong> 92%</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>  Student Management System.</p>
+        </div>
+    </footer>
+</body>
+</html>

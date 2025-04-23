@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Student Management System</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+                <small id="usernameError" class="error-message"></small>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+                <small id="passwordError" class="error-message"></small>
+            </div>
+            
+            <button type="submit" class="btn btn-success" style="width: 100%;">Login</button>
+            
+            <div id="loginMessage" class="message" style="margin-top: 15px;"></div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const usernameError = document.getElementById('usernameError');
+            const passwordError = document.getElementById('passwordError');
+            const loginMessage = document.getElementById('loginMessage');
+
+            // Simple validation function
+            function validateInput(input, errorElement, minLength, fieldName) {
+                if (input.value.trim() === '') {
+                    errorElement.textContent = `${fieldName} is required`;
+                    return false;
+                } else if (input.value.length < minLength) {
+                    errorElement.textContent = `${fieldName} must be at least ${minLength} characters`;
+                    return false;
+                } else {
+                    errorElement.textContent = '';
+                    return true;
+                }
+            }
+
+            // Form submission handler
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Reset messages
+                loginMessage.textContent = '';
+                loginMessage.className = 'message';
+                
+                // Validate inputs
+                const isUsernameValid = validateInput(usernameInput, usernameError, 3, 'Username');
+                const isPasswordValid = validateInput(passwordInput, passwordError, 6, 'Password');
+                
+                if (isUsernameValid && isPasswordValid) {
+                    // Simulate login process (in a real app, this would be a server request)
+                    if (usernameInput.value === 'admin' && passwordInput.value === 'admin123') {
+                        // Successful login
+                        loginMessage.textContent = 'Login successful! Redirecting...';
+                        loginMessage.className = 'message success';
+                        
+                        // Redirect to dashboard after 1 second
+                        setTimeout(function() {
+                            window.location.href = 'index.html';
+                        }, 1000);
+                    } else {
+                        // Failed login
+                        loginMessage.textContent = 'Invalid username or password';
+                        loginMessage.className = 'message error';
+                    }
+                }
+            });
+
+            // Input event listeners for real-time validation
+            usernameInput.addEventListener('input', function() {
+                validateInput(usernameInput, usernameError, 3, 'Username');
+            });
+
+            passwordInput.addEventListener('input', function() {
+                validateInput(passwordInput, passwordError, 6, 'Password');
+            });
+        });
+    </script>
+
+    <style>
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.8em;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .message {
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .message.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        input:invalid {
+            border-color: #e74c3c;
+        }
+
+        input:valid {
+            border-color: #2ecc71;
+        }
+    </style>
+</body>
+</html>

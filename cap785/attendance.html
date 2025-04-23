@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System - Attendance</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Student Management</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="students.html">Students</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="attendance.html">Attendance</a></li>
+                    <li><a href="grades.html">Grades</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <h1>Attendance Management</h1>
+            
+            <div class="form-group">
+                <label for="selectCourse">Select Course</label>
+                <select id="selectCourse">
+                    <option value="">-- Select Course --</option>
+                    <option value="cs101">CS101 - Introduction to Programming</option>
+                    <option value="ee201">EE201 - Circuit Theory</option>
+                    <option value="ba301">BA301 - Business Management</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="attendanceDate">Date</label>
+                <input type="date" id="attendanceDate">
+            </div>
+            
+            <h2>Mark Attendance</h2>
+            <table>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>1001</td>
+                    <td>Manish kumar</td>
+                    <td>
+                        <select>
+                            <option value="present">Present</option>
+                            <option value="absent">Absent</option>
+                            <option value="late">Late</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1002</td>
+                    <td>Rahul kumar</td>
+                    <td>
+                        <select>
+                            <option value="present">Present</option>
+                            <option value="absent">Absent</option>
+                            <option value="late">Late</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1003</td>
+                    <td>Rohan</td>
+                    <td>
+                        <select>
+                            <option value="present">Present</option>
+                            <option value="absent">Absent</option>
+                            <option value="late">Late</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            
+            <button type="submit" class="btn btn-success" style="margin-top: 20px;">Save Attendance</button>
+            
+            <h2 style="margin-top: 40px;">Attendance Records</h2>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Course</th>
+                    <th>Present</th>
+                    <th>Absent</th>
+                    <th>Percentage</th>
+                </tr>
+                <tr>
+                    <td>2023-06-15</td>
+                    <td>CS101</td>
+                    <td>25</td>
+                    <td>5</td>
+                    <td>83.3%</td>
+                </tr>
+                <tr>
+                    <td>2023-06-14</td>
+                    <td>EE201</td>
+                    <td>18</td>
+                    <td>2</td>
+                    <td>90%</td>
+                </tr>
+                <tr>
+                    <td>2023-06-13</td>
+                    <td>BA301</td>
+                    <td>30</td>
+                    <td>0</td>
+                    <td>100%</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p> Student Management System.</p>
+        </div>
+    </footer>
+</body>
+</html>
